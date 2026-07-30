@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANAN | Portfolio</title>
+    <style>
+        /* CSS Modifications */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            opacity: 0; 
+            transform: translateY(10px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+        
+        h4 {
+            margin: 0 0 15px 0;
+            color: #495057;
+        }
+
+        .bonk-gif {
+            width: 150px; 
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto; 
+            border-radius: 8px; 
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 0 0 25px 0;
+            color: #6c757d;
+        }
+
+        .links-container {
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+
+        .links-container a {
+            color: #0d6efd;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .links-container a:hover {
+            color: #0a58ca;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="main-content">
+        <h1>Right place, just a bit too early.</h1>
+        <h4>Anan is still working on the website</h4>
+        
+        <!-- Changed to a local file path -->
+        <div align="center">
+  <img height="150" src="https://i.pinimg.com/originals/0c/0f/bb/0c0fbbce991b34e58c82703fd573903e.gif" alt="gif 1" />
+</div>
+        
+        <p>If you're looking for Anan</p>
+        
+        <div class="links-container">
+            <a href="https://www.linkedin.com/in/anan-rahman-khan-a35274370" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+            <a href="https://github.com/anan3510" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="https://www.facebook.com/anan.rahmankhan.1" target="_blank" rel="noopener noreferrer">Facebook</a> |
+            <a href="https://www.instagram.com/imnotanan._/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const content = document.getElementById("main-content");
+            setTimeout(() => {
+                content.style.opacity = "1";
+                content.style.transform = "translateY(0)";
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
