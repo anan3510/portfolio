@@ -115,7 +115,7 @@
   var cv = document.getElementById('ttpieces'); if (!cv) return; var ctx = cv.getContext('2d'); if (!ctx) return;
   var DPR = Math.min(devicePixelRatio || 1, 2), U = 4, Wc = 5 * U, Hc = 4 * U;
   cv.width = Math.round(Wc * DPR); cv.height = Math.round(Hc * DPR); cv.style.width = Wc + 'px'; cv.style.height = Hc + 'px'; ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-  var COL = ['#3E3259', '#00E8C6', '#F2C15C', '#F28D77'];
+  var COL = ['#81698C', '#00E8C6', '#F2C15C', '#F28D77'];
   // var COL = ['#3b5bd9', '#f5c518', '#e0492a', '#d8ff00'];
   var P = [[[0, 0], [1, 0], [2, 0], [3, 0]], [[0, 0], [1, 0], [0, 1], [1, 1]], [[0, 0], [1, 0], [2, 0], [1, 1]], [[1, 0], [2, 0], [0, 1], [1, 1]], [[0, 0], [1, 0], [2, 0], [0, 1]], [[0, 0], [1, 0], [2, 0], [2, 1]]];
   var i = 0;
