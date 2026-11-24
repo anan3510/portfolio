@@ -101,13 +101,34 @@
     else if (e.key === ' ') { phard(); e.preventDefault(); }
   }
   document.addEventListener('keydown', key);
-  footer.addEventListener('click', function (e) { if (phase !== 'idle' || (e.target.closest && e.target.closest('.tt-close,.tt-pad,.tt-again'))) return; startGame(); });
+  var isTouch = window.matchMedia && matchMedia('(hover: none), (pointer: coarse)').matches;
+  footer.addEventListener('click', function (e) {
+    if (isTouch || phase !== 'idle' || (e.target.closest && e.target.closest('.tt-close,.tt-pad,.tt-again'))) return;
+    startGame();
+  });
   /* ---- main loop ---- */
   (function loop() {
-    if (on && !reduce) {
-      if (phase === 'idle') { at++; if (at % 5 === 0) astep(); if (afade > 0) { afade += 0.05; if (afade >= 1) { grid = new Int8Array(cols * rows); seed(); afade = 0; } } adraw(); }
-      else if (phase === 'flick') { flick += 0.06; adraw(); if (flick >= 1) { phase = 'expand'; footer.classList.add('playing'); glideToFooter(); setTimeout(beginPlay, 580); } }
-    } requestAnimationFrame(loop);
+    if (on) {
+      if (phase === 'idle') {
+        at++;
+        if (at % 5 === 0) astep();
+        if (afade > 0) {
+          afade += 0.05;
+          if (afade >= 1) { grid = new Int8Array(cols * rows); seed(); afade = 0; }
+        }
+        adraw();
+      } else if (phase === 'flick') {
+        flick += 0.06;
+        adraw();
+        if (flick >= 1) {
+          phase = 'expand';
+          footer.classList.add('playing');
+          glideToFooter();
+          setTimeout(beginPlay, 580);
+        }
+      }
+    }
+    requestAnimationFrame(loop);
   })();
 })();
 /* teaser: cycle through tetromino pieces one at a time, like a tiny loop */
